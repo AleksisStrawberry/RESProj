@@ -10,7 +10,7 @@ namespace ResProjectForZoki
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Caoooooo");
+            Console.WriteLine("Caoooooooooo");
         }
     }
 }
