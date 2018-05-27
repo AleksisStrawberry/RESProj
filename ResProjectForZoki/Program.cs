@@ -11,6 +11,7 @@ namespace ResProjectForZoki
         static void Main(string[] args)
         {
             Console.WriteLine("Caoooooooooo");
+            Console.WriteLine("Ovo nije lazni komit.");
         }
     }
 }
