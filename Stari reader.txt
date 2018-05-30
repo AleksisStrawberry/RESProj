@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
+
+namespace ResProjectForZoki.FileReader
+{
+    public class Reader
+    {
+        private struct Podatak
+        {
+            int Sat;
+            int Potrosnja;
+            string Id;
+
+            public Podatak(int sat, int potrosnja, string id)
+            {
+                this.Sat = sat;
+                this.Potrosnja = potrosnja;
+                this.Id = id;
+            }
+        }
+
+        private Podatak GetPodatak(StreamReader reader)
+        {
+            //var reader = new StreamReader(System.IO.File.OpenRead(f));
+            //List<string> searchList = new List<string>();
+            //while (!reader.EndOfStream)
+            var line = reader.ReadLine().Split('\t');
+            Podatak p = new Podatak(Int32.Parse(line[0]), 0, "");
+            if (line.Length == 3)
+            {
+                p = new Podatak(
+                    Int32.Parse(line[0]),
+                    Int32.Parse(line[1]),
+                    line[2]
+                );
+            }
+            return p;
+        }
+
+        public Reader()
+        {
+
+        }
+    }
+}

@@ -1,0 +1,14 @@
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\Database.mdf
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\Database_log.ldf
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\ResProjectForZoki.exe.config
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\ResProjectForZoki.exe
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\ResProjectForZoki.pdb
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\Google.Protobuf.dll
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\MySql.Data.dll
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\Google.Protobuf.xml
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\bin\Debug\MySql.Data.xml
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\obj\Debug\ResProjectForZoki.csprojAssemblyReference.cache
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\obj\Debug\ResProjectForZoki.csproj.CoreCompileInputs.cache
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\obj\Debug\ResProjectForZoki.csproj.CopyComplete
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\obj\Debug\ResProjectForZoki.exe
+C:\Users\David\Documents\Fax\RES\Git\RESProj\ResProjectForZoki\obj\Debug\ResProjectForZoki.pdb
