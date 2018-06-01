@@ -39,7 +39,7 @@ namespace ResProjectForZoki.DB
             public string Groups { get => _groups; set { _groups = value; } }
         }
 
-    internal class Context : DbContext
+    internal class Context : DbContext  //kako smo mokovali kontekst????
     {
        public Context() : base("dbConnection2017") { //kupi iz konfiguracionog fajla
             Configuration.LazyLoadingEnabled = false;

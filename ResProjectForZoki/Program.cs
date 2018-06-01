@@ -21,6 +21,7 @@ namespace ResProjectForZoki
 
             Console.WriteLine("Caoooooooooo");
             Console.WriteLine("Ovo nije lazni komit.");
+            Console.WriteLine("Proveriti da li treba da se prave posebno projekti za DataAccess i ostalo!");
         }
 
         private static void IniinitializeDatabasePath() //kad god se pokrene da se podesi putanja bez obzira na kom je racunaru
