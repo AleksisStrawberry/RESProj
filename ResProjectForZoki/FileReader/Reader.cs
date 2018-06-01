@@ -17,7 +17,7 @@ namespace ResProjectForZoki.FileReader
         {
             Podaci.Columns.AddRange(new DataColumn[3]   // D: Formira se tabela
                 {
-                    new DataColumn("Sat", typeof(int)),
+                    new DataColumn("Sat", typeof(int)),     //ovde treba na engleskom da nam budu imena, zbog konzistentnosti koda
                     new DataColumn("Potrosnja", typeof(int)),
                     new DataColumn("IdGeoPod", typeof(string))
                 }
