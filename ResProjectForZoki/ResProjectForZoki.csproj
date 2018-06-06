@@ -80,14 +80,20 @@
     <Compile Include="DataAccessModul\Converter.cs" />
     <Compile Include="DataAccessModul\DataAccess.cs" />
     <Compile Include="DataAccessModul\Consummation.cs" />
+    <Compile Include="DataAccessModul\IConverter.cs" />
+    <Compile Include="DataProxyModul\DataProxy.cs" />
+    <Compile Include="DataProxyModul\IDataProxy.cs" />
     <Compile Include="DB\Context.cs" />
     <Compile Include="DB\Database.cs" />
     <Compile Include="DB\DBConfiguration.cs" />
-    <Compile Include="FileReader\Reader.cs" />
-    <Compile Include="FileReader\Sender.cs" />
+    <Compile Include="FileReaderModul\FileReader.cs" />
+    <Compile Include="FileReaderModul\ReaderHelper.cs" />
     <Compile Include="Interfaces\IDataAccess.cs" />
     <Compile Include="Interfaces\IDatabase.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="LoggerModul\ILogger.cs" />
+    <Compile Include="LoggerModul\Logger.cs" />
+    <Compile Include="ObjectMaker.cs" />
+    <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,9 +114,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataProxy\" />
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

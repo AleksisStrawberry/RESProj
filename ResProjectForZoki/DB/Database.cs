@@ -15,9 +15,8 @@ namespace ResProjectForZoki.DB
         {
             using (var database = new Context())
             { 
-                //database.data.ToList();
                 database.consumations.Add(data);
-                database.SaveChanges(); //BITNOOOOOOOOOOO, ne kod citanja
+                database.SaveChanges(); //BITNOOO
             }
 
             return true;

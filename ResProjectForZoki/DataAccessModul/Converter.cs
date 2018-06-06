@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace ResProjectForZoki.DataAccessModul
 {
-    public class Converter
+    public class Converter:IConverter
     {
         public List<Consummation> ConvertDataTable(DataTable tbl)
         {
             List<Consummation> results = new List<Consummation>();
-
+            Consummation convertedObject;
             // iterate over your data table
             foreach (DataRow row in tbl.Rows)
             {
-                Consummation convertedObject = ConvertRowToMyObject(row);
+                convertedObject = ConvertRowToMyObject(row);
                 results.Add(convertedObject);
             }
 
             return results;
         }
 
-        public Consummation ConvertRowToMyObject(DataRow row)
+        private Consummation ConvertRowToMyObject(DataRow row)
         {
             Consummation result = new Consummation();
 
-            result.Hour = Convert.ToInt32(row["Sat"]);
-            result.ConsummationMWH = Convert.ToInt32(row["Potrosnja"]);
-            result.IdOfArea = Convert.ToString(row["IdGeoPod"]);
+            result.TimeStamp = Convert.ToDateTime(row["TimeStamp"]);
+            result.Comsumption = Convert.ToInt32(row["Comsumption"]);
+            result.IdGeoArea = Convert.ToString(row["IdGeoArea"]);
 
             return result;
         }

@@ -10,24 +10,46 @@ namespace ResProjectForZoki.DataAccessModul
 {
     public class Consummation
     {
-        private int hour;            //sat
-        private int consummationMWH; //potrosnja(mW/h)
-        private string idOfArea;     //id podrucja
+        private DateTime timeStamp;     //datum i vreme
+        private int comsumption;       //potrosnja(mW/h)
+        private string idGeoArea;     //id podrucja
 
         #region Properties
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Hour { get => hour; set => hour = value; }
-        public int ConsummationMWH { get => consummationMWH; set => consummationMWH = value; }
-        public string IdOfArea { get => idOfArea; set => idOfArea = value; }
+        [Key]
+        public int Id { get; set; }
+        public DateTime TimeStamp { get => timeStamp; set => timeStamp = value; }
+        public int Comsumption { get => comsumption; set => comsumption = value; }
+        public string IdGeoArea { get => idGeoArea; set => idGeoArea = value; }
         #endregion Properties
 
         public Consummation() { }
-        public Consummation(int hour, int consummationMWH, string idOfArea)
+        public Consummation(DateTime timeStamp, int comsumption, string idGeoArea)
         {
-            Hour = hour;
-            ConsummationMWH = consummationMWH;
-            IdOfArea = idOfArea;
+            TimeStamp = timeStamp;
+            Comsumption = comsumption;
+            IdGeoArea = idGeoArea;
         }
 
+        public override bool Equals(object obj)
+        {
+            Consummation c = (Consummation) obj;
+            if(Id != c.Id)
+            {
+                return false;
+            }
+            if (TimeStamp != c.TimeStamp)
+            {
+                return false;
+            }
+            if (Comsumption != c.Comsumption)
+            {
+                return false;
+            }
+            if (IdGeoArea != c.IdGeoArea)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

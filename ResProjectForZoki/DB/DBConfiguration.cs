@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ResProjectForZoki.DB
 {
+    [NotMapped]
     internal class DBConfiguration: DbMigrationsConfiguration<Context>
     {
         public DBConfiguration()

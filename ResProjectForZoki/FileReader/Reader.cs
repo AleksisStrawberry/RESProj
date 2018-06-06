@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,36 +11,35 @@ namespace ResProjectForZoki.FileReader
 {
     public class Reader
     {
-        private DataTable Podaci = new DataTable();     // D: Tabela za podatke
-        string csv_file_path = @"C:\Users\David\Documents\Fax\RES\zadatak_4\csv\ostv_2018_05_07.csv";   // D: Putanja do csv-a na mom kompu
+       
 
-        public void ImportCSV()
+        public void ImportCSV(DataTable Podaci, string fileName)
         {
-            Podaci.Columns.AddRange(new DataColumn[3]   // D: Formira se tabela
-                {
-                    new DataColumn("Sat", typeof(int)),     //ovde treba na engleskom da nam budu imena, zbog konzistentnosti koda
-                    new DataColumn("Potrosnja", typeof(int)),
-                    new DataColumn("IdGeoPod", typeof(string))
-                }
-            );
+             string Date = fileName.Split('\\')[8];
+             Date = Date.Split('.')[0];
+             //Console.WriteLine(Date);
 
-            string csvData = File.ReadAllText(csv_file_path);   // D: Iscita se ceo fajl
+             string csvData = File.ReadAllText(fileName);   // D: Iscita se ceo fajl
 
-            foreach (string row in csvData.Split('\n'))     // D: Dodaju se podaci u tabelu red po red
-            {
-                if (!string.IsNullOrEmpty(row))
-                {
+             DateTime TimeStamp = DateTime.ParseExact(Date, "yyyy_MM_dd", CultureInfo.InvariantCulture);
+             //Console.WriteLine(TimeStamp);
+
+             foreach (string row in csvData.Split('\n'))     // D: Dodaju se podaci u tabelu red po red
+             {
+                 if (!string.IsNullOrEmpty(row))
+                 {
                     Podaci.Rows.Add();
-                    int i = 0;
-  
-                    foreach (string cell in row.Split(' '))     // D: Dodaje se svako polje u redu
-                    {
-                        Podaci.Rows[Podaci.Rows.Count - 1][i] = cell;
-                        i++;
-                    }
-                }
-            }
 
+                    TimeSpan time = new TimeSpan(row[0], 0, 0);
+                    TimeStamp = TimeStamp.Date + time;
+                    Podaci.Rows[Podaci.Rows.Count - 1][0] = TimeStamp;      // D: Ubaci vreme
+
+                    Podaci.Rows[Podaci.Rows.Count - 1][1] = row[1];         // D: Ubaci potrosnju
+
+                    Podaci.Rows[Podaci.Rows.Count - 1][2] = row[2];         // D: Ubaci IdGeoPod
+
+                 }
+             }
             
         }
     }
